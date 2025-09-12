@@ -20,8 +20,8 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  const addToCartHandler = async (product, qty) => {
-    dispatch(addToCart({ ...product, qty }));
+  const addToCartHandler = async (place, qty) => {
+    dispatch(addToCart({ ...place, qty }));
   };
 
   const removeFromCartHandler = (id) => {
@@ -49,7 +49,7 @@ const CartScreen = () => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item._id}`}>{item.name}</Link>
+                    <Link to={`/place/${item._id}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>

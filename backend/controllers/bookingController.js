@@ -22,7 +22,7 @@ const addBookingItems = asyncHandler(async (req, res) => {
     const booking = new Booking({
       bookingItems: bookingItems.map((x) => ({
         ...x,
-        product: x._id,
+        place: x._id,
         _id: undefined,
       })),
       user: req.user._id,
